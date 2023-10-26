@@ -43,7 +43,7 @@ const GenericFilterDropdown = <T extends { [key: string]: any }>({
         <ul className="filtered-list">
           {filteredData.map((item) => (
             <li
-              key={item.id} // Assuming there's an 'id' property
+              key={item.id}
               onClick={() => handleValueChange(item)}
               className="filtered-item"
             >
