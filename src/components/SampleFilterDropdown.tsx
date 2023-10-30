@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import GenericFilterDropdown from "../common/GenericFilterDropdown";
+import useLocalStorage from "../hooks/genericLocalStorage";
+import SetLocalStorageValue from "./SetLocalStorageValue";
+import DisplayLocalStorageValue from "./DisplayLocalStorageValue";
 
 const TestFilterComponent: React.FC = () => {
   const [apiData, setApiData] = useState([]);
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -23,6 +25,8 @@ const TestFilterComponent: React.FC = () => {
         filterKey="name"
         valueChange={handleUserSelection}
       />
+      <SetLocalStorageValue />
+      <DisplayLocalStorageValue />
     </div>
   );
 };
